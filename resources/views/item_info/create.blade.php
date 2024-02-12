@@ -8,13 +8,13 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="text-sm text-red-600 bg-red-100 rounded-md">  
-                @if ($errors->any())  
-                    <ul class="p-4">  
-                        @foreach ($errors->all() as $error)  
-                            <li class="py-1">{{ $error }}</li>  
-                        @endforeach  
-                    </ul>  
-                @endif  
+            @if ($errors->any())
+                <ul class="p-4">
+                    @foreach ($errors->all() as $error)
+                        <li class="py-1">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
             </div>
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="max-w-xl">
@@ -68,10 +68,10 @@
                             <x-form-textarea label="メモ" name="memo" class="mb-6 block w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" />
                         </div>
                     </form>
-                    <form method="get" action="{{ route('itemInfoIndex') }}" id="button_back"></form>
+                    <form method="get" action="{{ route('itemInfoIndex') }}" id="btn_back"></form>
                     <div class="flex items-center gap-4">
                         <x-primary-button form="create_form">登録</x-primary-button>
-                        <x-secondary-button type="submit" form="button_back">戻る</x-secondary-button>
+                        <x-secondary-button type="submit" form="btn_back">戻る</x-secondary-button>
                     </div>
                 </div>
             </div>
