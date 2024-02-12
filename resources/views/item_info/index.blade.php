@@ -1,4 +1,8 @@
 <x-app-layout>
+    @section('script')
+        @vite('resources/js/item_info.js')
+    @endsection
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ "商品情報一覧" }}
@@ -29,6 +33,12 @@
                 <div class="max-w">
                 @include('item_info.index_partials.index-table')
                 </div>
+                <form id=update_form>
+                    <input type="hidden" id="update_id" name="id" value="">
+                    <input type="hidden" id="update_amount" name="amount" value="">
+                    <input type="hidden" id="update_price" name="price" value="">
+                    <input type="hidden" id="update_confirm_date" name="confirm_date" value="">
+                </form>
             </div>
         </div>
     </div>

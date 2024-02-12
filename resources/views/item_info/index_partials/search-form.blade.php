@@ -5,7 +5,7 @@
         </div>
     </form>
 
-    <form method="get" action="{{ route('itemInfoIndex') }}" class="mt-6 space-y-6">
+    <form method="get" action="{{ route('itemInfoIndex') }}" id="search_form" class="mt-6 space-y-6">
         <div>
             <x-input-label for="item_name">商品</x-input-label>
             <x-text-input id="item_name" name="item_name" type="text" :value="session()->get('item_name')" class="mt-1 block w-full"></x-text-input>
@@ -26,10 +26,12 @@
             <x-form-select label="中分類" name="subcategory_id" :options="$subcategory_list" class="block w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" />
         </div>
 
+        <input type="hidden" id="reset_flag" value="0">
+
         <div class="flex items-center gap-4">
             <x-primary-button>検索</x-primary-button>
             <!-- TODO: リセットボタン押下で検索条件をリセット -->
-            <x-secondary-button>リセット</x-secondary-button>
+            <x-secondary-button id="btn_reset">リセット</x-secondary-button>
         </div>
     </form>
 </section>
